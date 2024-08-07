@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 
 function Footer() {
@@ -26,24 +27,31 @@ function Footer() {
           <h3 className='text-gris1 font-archivo-regular'>
             Subscribe to our newsletter for upcoming products and best discount for all items
           </h3>
-          <form onSubmit={handleSubmit}>
+          <form className='flex flex-row gap-2' onSubmit={handleSubmit}>
             <input
               type="email"
               placeholder='Your email'
-              className='p-3 rounded-full bg-transparent border-2 border-blanc placeholder:text-blanc outline-none'
+              className='p-3 rounded-full w-2/3 bg-transparent border-2 border-blanc placeholder:text-blanc outline-none'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="submit"
               value="Subscribe"
-              className='ml-5 border-2 outline-none p-3 rounded-full bg-blanc text-noir hover:bg-noir hover:text-blanc border-blanc'
+              className='border-2 w-1/3 outline-none p-3 rounded-full bg-blanc text-noir hover:bg-noir hover:text-blanc border-blanc'
             />
           </form>
         </div>
 
-        <div className='mt-5 lg:mt-0 text-blanc'>
-          WOeld
+        <div className='mt-5 flex gap-5lg:mt-0 text-blanc'>
+          <div>
+            <ul className='flex-col flex gap-5'>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Collections</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
