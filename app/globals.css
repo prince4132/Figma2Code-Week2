@@ -25,3 +25,28 @@ body {
     text-wrap: balance;
   }
 }
+
+.hero{
+  background-image: url('/images/jordan1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.product-items{
+  background-image: url('/images/nike-air.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.col1 {
+  background-image: url('/images/collection1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.col2 {
+  background-image: url('/images/collection2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
