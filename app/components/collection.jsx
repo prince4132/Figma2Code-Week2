@@ -13,7 +13,7 @@ function Collection() {
             </p>
         </div>
 
-        <div className="mt-10 block flex-col md:flex-row md:flex gap-5">
+        <div className="mt-10 block flex-row md:flex-row md:flex gap-5">
 
             <div  className='col1 w-full md:w-1/3 h-[400px] md:h-[500px] justify-center flex p-3 rounded-[50px] md:rounded-3xl '>
                 <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc place-self-end bg-blanc p-1 md:p-2 rounded-full'>

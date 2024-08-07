@@ -59,7 +59,7 @@ function Header() {
             </a></li>
         </ul>
         
-        <ul className={`w-full h-full-scrre z-50 text-noir bg-blanc lg:w-auto lg:relative top-[100%] gap-5 flex-col items-center mt-10 absolute ${isMenuOpen ? 'flex' : 'hidden'}`}>
+        <ul className={`w-full h-full-scrre z-50 text-noir bg-blanc lg:w-auto lg:relative top-[100%] gap-5 flex-col items-center pb-5 mt-10 absolute ${isMenuOpen ? 'flex' : 'hidden'}`}>
            <li><a href="#">Men</a></li>
           <li><a href="#">Women</a></li>
           <li><a href="#">Kids</a></li>
