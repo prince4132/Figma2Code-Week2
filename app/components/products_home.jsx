@@ -6,7 +6,7 @@ import Cart2 from "@/public/images/cart.png";
 function products_home() {
   return (
    <section className='mt-[50px] px-[5%]'>
-        <h1 className='font-chillax-semibold text-xl text-center md:text-3xl'>
+        <h1 className='font-chillax-semibold text-noir text-xl text-center md:text-3xl'>
             Discover the latests trends in summer fashion. Show now and refresh
             your wardrobe with our stylish summer shirt.
         </h1>

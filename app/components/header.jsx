@@ -26,7 +26,7 @@ function Header() {
 
 
   return (
-    <section className='text-1xl font-archivo-regular sticky'>
+    <section className='text-1xl font-archivo-regular text-noir sticky'>
       <h1 className={`${JetBrains.className} text-xs flex justify-center items-center bg-noir p-5 text-blanc md:text-xl`}>
         Sign up and get 20% off for all new arrivals collections
       </h1>
@@ -42,7 +42,7 @@ function Header() {
           <li><a href="#">Collections</a></li>
         </ul>
 
-        <h1 className='uppercase text-[36px] font-chillax-extralight font-semibold'>Ballamas</h1>
+        <h1 className='uppercase text-[36px] text-noir font-chillax-extralight font-semibold'>Ballamas</h1>
 
         <ul className="hidden lg:flex w-full h-full md:w-auto md:relative gap-5">
           <li><a href="#">Shop</a></li>
