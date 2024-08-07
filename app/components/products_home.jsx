@@ -20,11 +20,11 @@ function products_home() {
                 Accessories 13
             </button>
 
-            <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc  transition-all flex-grow-0 p-1 md:p-5 rounded-full'>
+            <button className='text-noir hidden md:block border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc  transition-all flex-grow-0 p-1 md:p-5 rounded-full'>
                 Featured 67
             </button>
 
-            <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc  transition-all flex-grow-0 p-1 md:p-5 rounded-full'>
+            <button className='text-noir hidden md:block border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc  transition-all flex-grow-0 p-1 md:p-5 rounded-full'>
                 Unisex 52
             </button>
         </div>
