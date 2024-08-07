@@ -2,6 +2,8 @@ import Image from 'next/image'
 import React from 'react'
 import ProductAir from "@/public/images/nike-air.png";
 import Cart2 from "@/public/images/cart.png";
+import Link from 'next/link';
+
 
 function products_home() {
   return (
@@ -35,6 +37,19 @@ function products_home() {
                 <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc w-32 bg-blanc  transition-all flex-grow-0 p-1 md:p-2 rounded-full'>
                     GET OF 20%
                 </button>
+
+                <div className="flex gap-2 absolute top-[80%] justify-center items-center">
+                    
+                    <div className='w-[100px] bg-blanc p-3 md:p-5 rounded-full'>
+                        <Image src={Cart2} />
+                    </div>
+
+                    <Link href="./pages/products">
+                            <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                    </Link>
+                </div>
                 
                 <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
 
@@ -47,6 +62,19 @@ function products_home() {
                     GET OF 20%
                 </button>
 
+                <div className="flex gap-2 absolute top-[80%] justify-center items-center">
+                    
+                    <div className='w-[100px] bg-blanc p-3 md:p-5 rounded-full'>
+                        <Image src={Cart2} />
+                    </div>
+
+                    <Link href="./pages/products">
+                            <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                    </Link>
+                </div>
+
                 <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
 
                 <h1 className='text-gris3 translate-y-6 top-[100%] mt-3 absolute text-1xl'>$99</h1>
@@ -57,6 +85,19 @@ function products_home() {
                 <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc  transition-all flex-grow-0 p-1 md:p-2 rounded-full'>
                     GET OF 20%
                 </button>
+
+                <div className="flex gap-2 absolute top-[80%] justify-center items-center">
+                    
+                    <div className='w-[100px] bg-blanc p-3 md:p-5 rounded-full'>
+                        <Image src={Cart2} />
+                    </div>
+
+                    <Link href="./pages/products">
+                            <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                    </Link>
+                </div>
 
                 <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
 
@@ -69,6 +110,19 @@ function products_home() {
                     GET OF 20%
                 </button>
 
+                <div className="flex gap-2 absolute top-[80%] justify-center items-center">
+                    
+                    <div className='w-[100px] bg-blanc p-3 md:p-5 rounded-full'>
+                        <Image src={Cart2} />
+                    </div>
+
+                    <Link href="./pages/products">
+                            <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                    </Link>
+                </div>
+
                 <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
 
                 <h1 className='text-gris3 translate-y-6 top-[100%] mt-3 absolute text-1xl'>$99</h1>
@@ -79,6 +133,19 @@ function products_home() {
                 <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc  transition-all flex-grow-0 p-1 md:p-2 rounded-full'>
                     GET OF 20%
                 </button>
+
+                <div className="flex gap-2 absolute top-[80%] justify-center items-center">
+                    
+                    <div className='w-[100px] bg-blanc p-3 md:p-5 rounded-full'>
+                        <Image src={Cart2} />
+                    </div>
+
+                    <Link href="./pages/products">
+                            <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                    </Link>
+                </div>
 
                 <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
 
@@ -91,6 +158,19 @@ function products_home() {
                     GET OF 20%
                 </button>
 
+                <div className="flex gap-2 absolute top-[80%] justify-center items-center">
+                    
+                    <div className='w-[100px] bg-blanc p-3 md:p-5 rounded-full'>
+                        <Image src={Cart2} />
+                    </div>
+
+                    <Link href="./pages/products">
+                            <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                    </Link>
+                </div>
+
                 <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
 
                 <h1 className='text-gris3 translate-y-6 top-[100%] mt-3 absolute text-1xl'>$99</h1>
@@ -101,6 +181,19 @@ function products_home() {
                 <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc  transition-all flex-grow-0 p-1 md:p-2 rounded-full'>
                     GET OF 20%
                 </button>
+
+                <div className="flex gap-2 absolute top-[80%] justify-center items-center">
+                    
+                    <div className='w-[100px] bg-blanc p-3 md:p-5 rounded-full'>
+                        <Image src={Cart2} />
+                    </div>
+
+                    <Link href="./pages/products">
+                            <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                    </Link>
+                </div>
 
                 <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
 
@@ -119,9 +212,11 @@ function products_home() {
                         <Image src={Cart2} />
                     </div>
 
-                    <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
-                        BUY NOW
-                    </button>
+                    <Link href="./pages/products">
+                            <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                    </Link>
                 </div>
 
                 <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
@@ -133,6 +228,19 @@ function products_home() {
                 <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc  transition-all flex-grow-0 p-1 md:p-2 rounded-full'>
                     GET OF 20%
                 </button>
+
+                <div className="flex gap-2 absolute top-[80%] justify-center items-center">
+                    
+                    <div className='w-[100px] bg-blanc p-3 md:p-5 rounded-full'>
+                        <Image src={Cart2} />
+                    </div>
+
+                    <Link href="./pages/products">
+                            <button className='bg-transparent text-blanc hover:text-blanc border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                    </Link>
+                </div>
 
                 <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
 
