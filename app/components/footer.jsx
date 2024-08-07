@@ -43,7 +43,7 @@ function Footer() {
           </form>
         </div>
 
-        <div className='mt-5 flex gap-20 lg:mt-0 text-blanc'>
+        <div className='mt-5 flex gap-5 lg:gap-20 lg:mt-0 text-blanc'>
 
           <div>
             <ul className='flex-col text-gris2 flex gap-2'>
