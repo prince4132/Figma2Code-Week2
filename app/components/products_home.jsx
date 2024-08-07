@@ -11,7 +11,7 @@ function products_home() {
             your wardrobe with our stylish summer shirt.
         </h1>
 
-        <div className='mt-10 flex gap-2 md:gap-5 mx-auto w-full flex-wrap md:w-[600px]'>
+        <div className='mt-10 flex-grow-0 flex gap-2 md:gap-5 mx-auto w-full flex-wrap md:w-[600px]'>
             <button className='text-blanc flex-grow-0 hover:bg-blanc hover:text-noir hover:border-noir hover:border-2 bg-noir transition-all p-3 md:p-5 rounded-full'>
                 All 132
             </button>
