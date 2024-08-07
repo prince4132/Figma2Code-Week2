@@ -51,13 +51,13 @@ function page() {
 
                     <div className="flex gap-3 w-full">
 
-                        <Link href=".pages/cart" className='w-1/2'>
+                        <Link href="./pages/cart" className='w-1/2'>
                             <button className='text-blanc flex-grow-0 hover:bg-blanc hover:text-noir w-full  hover:border-noir hover:border-2 bg-noir  p-3 md:p-5 rounded-full'>
                                 BUY NOW
                             </button>
                         </Link>
 
-                        <Link href=".pages/cart" className='w-1/2'>
+                        <Link href="./pages/cart" className='w-1/2'>
                             <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc w-full  p-3 flex-grow-0 md:p-5 rounded-full'>
                                 ADD TO CARD
                             </button>
