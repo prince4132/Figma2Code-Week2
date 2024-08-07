@@ -42,7 +42,7 @@ function Header() {
           <li><a href="#">Collections</a></li>
         </ul>
 
-        <h1 className='uppercase text-[36px] text-noir font-chillax-extralight font-semibold'>Ballamas</h1>
+        <h1 className='uppercase text-xl md:text-[36px] text-noir font-chillax-extralight font-semibold'>Ballamas</h1>
 
         <ul className="hidden lg:flex w-full h-full md:w-auto md:relative gap-5">
           <li><a href="#">Shop</a></li>

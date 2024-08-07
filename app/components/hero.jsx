@@ -7,7 +7,7 @@ function hero() {
     <section className='mx-[5%] mt-10 hero h-[450px] rounded-[40px] py-5 md:rounded-3xl flex justify-center items-center flex-col gap-5 border'>
 
         <div className="flex justify-center items-center p-5 gap-1">
-            <hr className='w-[50px] md:w-[80px] border-none h-[1px] bg-gris3' />
+            <hr className='w-[50px] md:w-[80px] border-none h-[1px] bg-gris2' />
             <h3 className='text-gris2 font-archivo-regular text-center '>We bring new fashion to the world</h3>
             <hr className='w-[50px] border-none h-[1px] bg-gris3' />
         </div>
