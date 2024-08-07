@@ -50,19 +50,24 @@ function page() {
                     </div>
 
                     <div className="flex gap-3 w-full">
-                        <button className='text-blanc flex-grow-0 hover:bg-blanc hover:text-noir hover:border-noir hover:border-2 bg-noir w-full p-3 md:p-5 rounded-full'>
-                            BUY NOW
-                        </button>
 
-                        <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc w-full  p-1 flex-grow-0 md:p-5 rounded-full'>
-                        ADD TO CARD
-                    </button>
+                        <Link href=".pages/cart" className='w-1/2'>
+                            <button className='text-blanc flex-grow-0 hover:bg-blanc hover:text-noir w-full  hover:border-noir hover:border-2 bg-noir  p-3 md:p-5 rounded-full'>
+                                BUY NOW
+                            </button>
+                        </Link>
+
+                        <Link href=".pages/cart" className='w-1/2'>
+                            <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc bg-blanc w-full  p-3 flex-grow-0 md:p-5 rounded-full'>
+                                ADD TO CARD
+                            </button>
+                        </Link>
 
                     </div>
 
                     <div>
                         <h1 className='text-noir font-chillax-semibold text-1xl md:text-2xl'>Description</h1>
-                        <p className='text-gris3 font-archivo-regular text-sm md:text-2xl mt-5 '>
+                        <p className='text-gris3 font-archivo-regular text-sm md:text-xl  mt-5 '>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Nunc vulputate libero et velit interdum, ac aliquet odio mattis. 
                         Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
@@ -96,7 +101,7 @@ function page() {
 
                 </div>
 
-                <div className='product-items  relative rounded-3xl mt-20 md:mt-16 p-5 w-full md:w-[48%] lg:w-[23%] h-[450px]'>
+                <div className='product-items  relative rounded-3xl mt-20 lg:mt-0 md:mt-16 p-5 w-full md:w-[48%] lg:w-[23%] h-[450px]'>
 
 
                     <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
@@ -105,7 +110,7 @@ function page() {
 
                 </div>
 
-                <div className='product-items relative rounded-3xl mt-20 md:mt-16 p-5 w-full md:w-[48%] lg:w-[23%] h-[450px]'>
+                <div className='product-items relative rounded-3xl lg:mt-0 mt-20 md:mt-16 p-5 w-full md:w-[48%] lg:w-[23%] h-[450px]'>
 
 
                     <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
