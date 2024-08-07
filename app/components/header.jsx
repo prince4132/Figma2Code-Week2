@@ -27,7 +27,7 @@ function Header() {
 
   return (
     <section className='text-1xl font-archivo-regular text-noir sticky'>
-      <h1 className={`${JetBrains.className} text-xs flex justify-center items-center bg-noir p-5 text-blanc md:text-xl`}>
+      <h1 className={`${JetBrains.className} text-xs text-center flex justify-center items-center bg-noir p-5 text-blanc md:text-xl`}>
         Sign up and get 20% off for all new arrivals collections
       </h1>
 
