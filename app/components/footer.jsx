@@ -43,15 +43,40 @@ function Footer() {
           </form>
         </div>
 
-        <div className='mt-5 flex gap-5lg:mt-0 text-blanc'>
+        <div className='mt-5 flex gap-20 lg:mt-0 text-blanc'>
+
           <div>
-            <ul className='flex-col flex gap-5'>
+            <ul className='flex-col text-gris2 flex gap-2'>
+            <li><a href="#" className='text-blanc text-xl'>Product</a></li>
+            <li><a href="#">Jacket</a></li>
+            <li><a href="#">Shirt</a></li>
+            <li><a href="#">Jacket</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Sunglasses</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <ul className='flex-col text-gris2 flex gap-2'>
+            <li><a href="#" className='text-blanc text-xl'>Categories</a></li>
             <li><a href="#">Men</a></li>
             <li><a href="#">Women</a></li>
             <li><a href="#">Kids</a></li>
-            <li><a href="#">Collections</a></li>
+            <li><a href="#">Gift</a></li>
+            <li><a href="#">New arrival</a></li>
             </ul>
           </div>
+
+          <div>
+            <ul className='flex-col text-gris2 flex gap-2'>
+            <li><a href="#" className='text-blanc text-xl'>Our Social Media</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">X</a></li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
