@@ -62,7 +62,7 @@ function page() {
 
                     <div>
                         <h1 className='text-noir font-chillax-semibold text-1xl md:text-2xl'>Description</h1>
-                        <p className='text-gris3 font-archivo-regular mt-5 '>
+                        <p className='text-gris3 font-archivo-regular text-1xl md:text-2xl mt-5 '>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Nunc vulputate libero et velit interdum, ac aliquet odio mattis. 
                         Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
