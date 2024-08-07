@@ -24,7 +24,7 @@ function Footer() {
           <h1 className='uppercase text-xl md:text-[36px] text-blanc font-chillax-extralight font-semibold'>
             Ballamas
           </h1>
-          <h3 className='text-gris1 font-archivo-regular'>
+          <h3 className='text-gris1 text-sm md:text-xl font-archivo-regular'>
             Subscribe to our newsletter for upcoming products and best discount for all items
           </h3>
           <form className='flex flex-row gap-2' onSubmit={handleSubmit}>
@@ -43,11 +43,11 @@ function Footer() {
           </form>
         </div>
 
-        <div className='mt-5 flex gap-5 lg:gap-20 lg:mt-0 text-blanc'>
+        <div className='mt-5 text-sm md:text-xl flex gap-5 lg:gap-20 lg:mt-0 text-blanc'>
 
           <div>
             <ul className='flex-col text-gris2 flex gap-2'>
-            <li><a href="#" className='text-blanc text-xl'>Product</a></li>
+            <li><a href="#" className='text-blanc text-sm md:text-xl'>Product</a></li>
             <li><a href="#">Jacket</a></li>
             <li><a href="#">Shirt</a></li>
             <li><a href="#">Jacket</a></li>
@@ -58,7 +58,7 @@ function Footer() {
 
           <div>
             <ul className='flex-col text-gris2 flex gap-2'>
-            <li><a href="#" className='text-blanc text-xl'>Categories</a></li>
+            <li><a href="#" className='text-blanc text-sm md:text-xl'>Categories</a></li>
             <li><a href="#">Men</a></li>
             <li><a href="#">Women</a></li>
             <li><a href="#">Kids</a></li>
@@ -69,7 +69,7 @@ function Footer() {
 
           <div>
             <ul className='flex-col text-gris2 flex gap-2'>
-            <li><a href="#" className='text-blanc text-xl'>Our Social Media</a></li>
+            <li><a href="#" className='text-blanc text-sm md:text-xl'>Our Social Media</a></li>
             <li><a href="#">Instagram</a></li>
             <li><a href="#">Facebook</a></li>
             <li><a href="#">YouTube</a></li>
