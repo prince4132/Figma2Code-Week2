@@ -1,7 +1,9 @@
+"use client"
 import Image from "next/image";
 import Hero from "./components/hero";
 import Products_home from "./components/products_home";
 import Collection from "./components/collection";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
     <Hero/>
     <Products_home/>
     <Collection/>
+    {/* <List/> */}
+    <Footer/>
    </div>
   );
 }

@@ -23,7 +23,7 @@ function Collection() {
             </div>
 
             <div  className='col2 mt-5 md:mt-0 w-full md:w-2/3 h-[400px] md:h-[500px] flex flex-col justify-center items-center  rounded-[40px] md:rounded-3xl '>
-                <h1 className='uppercase text-3xl md:text-6xl font-light text-blanc text-center font-chillax-variable'>CLASSIC MEN
+                <h1 className='uppercase text-3xl md:text-6xl  text-blanc text-center font-chillax-bold'>CLASSIC MEN
                 </h1>
                 <h3 className='text-blanc font-archivo-regular text-xl text-center'>
                     We're changing the way things get made.
