@@ -15,17 +15,17 @@ function Collection() {
 
         <div className="mt-10 block flex-col md:flex-row md:flex gap-5">
 
-            <div  className='col1 w-full md:w-1/3 h-[500px] justify-center flex p-3 rounded-[50px] md:rounded-3xl '>
+            <div  className='col1 w-full md:w-1/3 h-[400px] md:h-[500px] justify-center flex p-3 rounded-[50px] md:rounded-3xl '>
                 <button className='text-noir border-2 border-noir hover:bg-noir hover:text-blanc place-self-end bg-blanc p-1 md:p-2 rounded-full'>
                      LEARN MORE
                      {/* <span><Image src={ArrowIcon} className='flex-shrink-0' width={20} height={20}/></span> */}
                 </button>
             </div>
 
-            <div  className='col2 mt-5 md:mt-0 w-full md:w-2/3 h-[500px] flex flex-col justify-center items-center  rounded-[50px] md:rounded-3xl '>
-                <h1 className='uppercase text-5xl md:text-6xl font-light text-blanc font-chillax-variable'>CLASSIC MEN
+            <div  className='col2 mt-5 md:mt-0 w-full md:w-2/3 h-[400px] md:h-[500px] flex flex-col justify-center items-center  rounded-[50px] md:rounded-3xl '>
+                <h1 className='uppercase text-3xl md:text-6xl font-light text-blanc text-center font-chillax-variable'>CLASSIC MEN
                 </h1>
-                <h3 className='text-blanc font-archivo-regular text-2xl text-center'>
+                <h3 className='text-blanc font-archivo-regular text-xl text-center'>
                     We're changing the way things get made.
                 </h3>
             </div>
