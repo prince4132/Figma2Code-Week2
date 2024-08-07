@@ -4,7 +4,7 @@ import ArrowIcon from "@/public/images/arrow.png";
 
 function hero() {
   return (
-    <section className='mx-[5%] mt-10 hero h-[400px] rounded-[50px] md:rounded-3xl flex justify-center items-center flex-col gap-5 border'>
+    <section className='mx-[5%] mt-10 hero h-[400px] rounded-[50px] py-5 md:rounded-3xl flex justify-center items-center flex-col gap-5 border'>
 
         <div className="flex justify-center items-center p-5 gap-1">
             <hr className='w-[50px] md:w-[80px] border-none h-[1px] bg-gris3' />
