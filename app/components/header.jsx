@@ -28,12 +28,13 @@ function Header({ products }) {
    const totalItems = products ? products.length : 0;
 
   return (
-    <section className='text-1xl font-archivo-regular text-noir sticky'>
+    <section className='text-1xl font-archivo-regular z-50 text-noir'>
+
       <h1 className={`${JetBrains.className} text-xs text-center flex justify-center items-center bg-noir p-5 text-blanc md:text-xl`}>
         Sign up and get 20% off for all new arrivals collections
       </h1>
 
-      <div className={`flex relative justify-between items-center ${isMenuOpen ? "p-0" : "p-[5%]"} py-8 border-b-2`}>
+      <div className={`flex relative justify-between items-center ${isMenuOpen ? "p-0" : "p-[5%]"} bg-blanc py-8 border-b-2`}>
         
         <Image src={isMenuOpen ? CloseIcon : OpenIcon} onClick={toggleMenu} className='lg:hidden cursor-pointer' />
 

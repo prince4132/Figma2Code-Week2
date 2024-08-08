@@ -1,11 +1,45 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductImg from "@/public/images/argentina.png";
 import Cart2 from "@/public/images/cart.png";
 import Link from 'next/link';
+import ProductItems from '@/app/components/prodItem';
+
+
 
 
 function page() {
+
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch('https://mock.shop/api?query=%7B%20products(first%3A%204)%20%7B%20edges%20%7B%20node%20%7B%20title%20description%20images(first%3A%201)%20%7B%20edges%20%7B%20node%20%7B%20url%20%7D%20%7D%20%7D%20variants(first%3A%201)%20%7B%20edges%20%7B%20node%20%7B%20price%20%7B%20amount%20currencyCode%20%7D%20%7D%20%7D%20%7D%20%7D%20%7D%20%7D%7D');
+                const data = await response.json();
+                console.log('Fetched data:', data);
+    
+                // Accède aux produits dans la réponse
+                const productsData = data.data.products.edges;
+                // Mappe les données en extrayant id, titre, description, prix, et image URL
+                const mappedProducts = productsData.map(edge => {
+                    const id = edge.node.id; // Assure-toi que chaque produit a un id
+                    const title = edge.node.title;
+                    const description = edge.node.description;
+                    const price = edge.node.variants.edges[0].node.price.amount;
+                    const imageUrl = edge.node.images.edges[0].node.url;
+                    return { id, title, description, price, imageUrl };
+                });
+    
+                setProducts(mappedProducts);
+            } catch (error) {
+                console.error('Failed to fetch products:', error);
+            }
+        };
+    
+        fetchProducts();
+    }, []);
+    
   return (
     <section>
         <section className="flex-col lg:flex lg:flex-row gap-5 mt-[50px] px-[5%]">
@@ -83,44 +117,26 @@ function page() {
             
             <div className="md:flex mb-24 flex-col items-center justify-center md:flex-row mt-10 flex-wrap gap-5 ">
 
-                <div className='product-items flex relative flex-col justify-between rounded-3xl w-full md:w-[48%] lg:w-[23%] p-5 h-[450px]'>
-
-                    
-                    <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
-
-                    <h1 className='text-gris3 translate-y-6 top-[100%] mt-3 absolute text-1xl'>$99</h1>
-
-                </div>
-
-                <div className='product-items relative rounded-3xl mt-20 md:mt-0 p-5 w-full md:w-[48%] lg:w-[23%] h-[450px]'>
-                    
-
-                    <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
-
-                    <h1 className='text-gris3 translate-y-6 top-[100%] mt-3 absolute text-1xl'>$99</h1>
-
-                </div>
-
-                <div className='product-items  relative rounded-3xl mt-20 lg:mt-0 md:mt-16 p-5 w-full md:w-[48%] lg:w-[23%] h-[450px]'>
+            <div className="md:flex flex-col items-center justify-center flex-wrap  md:flex-row mt-10 gap-5 ">
+                {products.map(product => (
+                <ProductItems
+                    key={product.id}
+                    id={product.id}
+                    title={product.title}
+                    description={product.description}
+                    price={product.price}
+                    imageUrl={product.imageUrl}
+                    link={"./products"}
+                />
+                ))}
+            </div>
 
 
-                    <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
 
-                    <h1 className='text-gris3 translate-y-6 top-[100%] mt-3 absolute text-1xl'>$99</h1>
-
-                </div>
-
-                <div className='product-items relative rounded-3xl lg:mt-0 mt-20 md:mt-16 p-5 w-full md:w-[48%] lg:w-[23%] h-[450px]'>
+                
 
 
-                    <h1 className='text-noir top-[100%] mt-3 absolute text-xl'>SUMMER SHIRT</h1>
-
-                    <h1 className='text-gris3 translate-y-6 top-[100%] mt-3 absolute text-1xl'>$99</h1>
-
-                </div>
-
-
-</div>
+            </div>
         </section>
     </section>
   )
