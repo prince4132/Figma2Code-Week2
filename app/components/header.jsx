@@ -15,7 +15,7 @@ const JetBrains = JetBrains_Mono({
 
 import React, { useState } from 'react'
 
-function Header() {
+function Header({ products }) {
    // État pour gérer la visibilité du menu
    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -24,6 +24,8 @@ function Header() {
      setIsMenuOpen(!isMenuOpen);
    };
 
+   // Calcul du nombre total de produits
+   const totalItems = products ? products.length : 0;
 
   return (
     <section className='text-1xl font-archivo-regular text-noir sticky'>
@@ -53,7 +55,7 @@ function Header() {
               <a href="#">Account</a>
             </div>
           </li>
-          <li><a href="#">Cart (0)</a></li>
+          <li><a href="#">Cart ({totalItems})</a></li>
           <li><a href="#">
           <Image src={SearchIcon} className='flex-shrink-0 flex-none' alt='Search Icon' />
             </a></li>
@@ -72,7 +74,7 @@ function Header() {
               <a href="#">Account</a>
             </div>
           </li>
-          <li><a href="#">Cart (0)</a></li>
+          <li><a href="#">Cart ({totalItems})</a></li>
           <li className='mt-5'><a href="#">FAQ</a></li>
           <li><a href="#">Contact Us Us</a></li>
         </ul>
