@@ -17,7 +17,7 @@ function page() {
   const [products, setProducts] = useState([]);
   const fetchProducts = async () => {
     try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}`);
+      const response = await axios.get("https://mon-serveur.vercel.app/products/");
       setProducts(response.data);
       console.log(response.data)
       

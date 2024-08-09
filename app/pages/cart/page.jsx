@@ -14,7 +14,7 @@ function Cart() {
   // Fonction pour récupérer les produits depuis l'API
   const fetchProducts = async () => {
     try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}`);
+      const response = await axios.get("https://mon-serveur.vercel.app/products/");
       setProducts(response.data);
       console.log(response.data)
       
@@ -27,7 +27,7 @@ function Cart() {
   const increment = async (id) => {
     const product = products.find(p => p.id === id);
     try {
-      await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}${id}`, {
+      await axios.patch(`https://mon-serveur.vercel.app/products/${id}`, {
         quantity: product.quantity + 1,
         totalPrice: (product.quantity + 1) * product.price
       });
@@ -42,7 +42,7 @@ function Cart() {
     const product = products.find(p => p.id === id);
     if (product.quantity > 1) {
       try {
-        await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}${id}`, {
+        await axios.patch(`https://mon-serveur.vercel.app/products/${id}`, {
           quantity: product.quantity - 1,
           totalPrice: (product.quantity - 1) * product.price
         });
@@ -56,7 +56,7 @@ function Cart() {
   // Fonction pour supprimer un produit du panier
   const removeProduct = async (id) => {
     try {
-      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}${id}`);
+      await axios.delete(`https://mon-serveur.vercel.app/products/${id}`);
       console.log('Deleting product with ID:', id); 
       fetchProducts(); // Récupère les produits mis à jour
     } catch (error) {
