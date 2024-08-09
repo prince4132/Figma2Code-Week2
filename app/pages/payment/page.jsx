@@ -16,7 +16,7 @@ function page() {
             Thanks you for your order!
         </h3>
 
-        <p className='text-gris3  text-sm md:text-1xl '>
+        <p className='text-gris3 text-center  text-sm md:text-1xl '>
             The order confirmation has been sent to johndoe@gmail.com
         </p>
     </section>
