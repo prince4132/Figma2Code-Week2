@@ -177,7 +177,7 @@ function page() {
 
                   <div className='flex flex-col gap-5 w-full mt-5'>
 
-                      <div className='flex gap-5'>
+                      <div className='flex w-full gap-5'>
                         <div className='flex flex-col w-1/2  '>
                           <label htmlFor="Nom" className='text-noir '>
                             First Name
@@ -203,7 +203,7 @@ function page() {
                         </div>
                       </div>
 
-                      <div className='flex gap-5'>
+                      <div className='flex w-full gap-5'>
                         <div className='flex flex-col w-1/2  '>
                           <label htmlFor="Email" className='text-noir '>
                             Email Address
@@ -229,7 +229,7 @@ function page() {
                         </div>
                       </div>
 
-                      <div className='flex gap-5'>
+                      <div className='flex w-full gap-5'>
                         <div className='flex flex-col w-1/2  '>
                           <label htmlFor="Adress" className='text-noir '>
                             Address
@@ -255,7 +255,7 @@ function page() {
                         </div>
                       </div>
 
-                      <div className='flex gap-5'>
+                      <div className='flex w-full gap-5'>
                         <div className='flex flex-col w-1/2  '>
                           <label htmlFor="Region" className='text-noir '>
                             Region
@@ -315,7 +315,7 @@ function page() {
                         <Image src={Lock}/>
                       </div>
 
-                      <div className='flex mt-5 gap-5'>
+                      <div className='flex w-full mt-5 gap-5'>
                         <div className='flex flex-col w-1/2  '>
                           
                           <input
