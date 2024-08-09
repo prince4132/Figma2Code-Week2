@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import Checked from '@/public/images/chevron.png'
+import Checked from '@/public/images/checked.png'
 
 function page() {
   return (
