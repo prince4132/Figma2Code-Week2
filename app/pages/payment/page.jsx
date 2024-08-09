@@ -4,7 +4,7 @@ import Checked from '@/public/images/checked.png'
 
 function page() {
   return (
-    <section className="mt-[50px] border h-[300px] flex-col gap-5 flex justify-center items-center mx-[5%]">
+    <section className="mt-[50px] h-[300px] flex-col gap-5 flex justify-center items-center mx-[5%]">
 
         <div className='w-16 h-16 border-2 border-noir flex items-center justify-center rounded-full'>
             <Image src={Checked}
