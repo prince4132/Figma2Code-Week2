@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Utilise la variable d'environnement pour l'URL de l'API
-const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+const apiUrl = process.env.NEXT_PUBLIC_API_URL
 
 // Fonction pour obtenir tous les produits
 export const getProducts = async () => {
