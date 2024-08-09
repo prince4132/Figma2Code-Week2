@@ -5,8 +5,21 @@ import ProductAir from "@/public/images/nike-air.png";
 import Cart2 from "@/public/images/cart.png";
 import Link from 'next/link';
 import ProductItem from './ProductItem'; // Vérifie le nom du fichier pour correspondre à l'import
+import { addProduct } from '../service/api';
+
+
+
 
 function ProductsHome() { // Capitalisation du nom du composant
+
+  const handleAddToCart = async (product) => {
+    try {
+      await addProduct(product);
+      alert('Le produit a été bien ajouté au panier');
+    } catch (error) {
+      console.error("Erreur au cours de l'ajout du produit:", error);
+    }
+  };
 
   const [products, setProducts] = useState([]);
 
@@ -73,6 +86,9 @@ function ProductsHome() { // Capitalisation du nom du composant
             price={product.price}
             imageUrl={product.imageUrl}
             link={"./pages/products"}
+            onAddToCart={handleAddToCart}
+
+            
           />
         ))}
       </div>

@@ -1,64 +1,73 @@
 'use client'
-import Image from 'next/image'
-import React, { useState } from 'react'
-import TrashIcon from '@/public/images/trash.png'
-import Link from 'next/link'
-import Tshirt from '@/public/images/t-shirt.png'
-import Plus from '@/public/images/plus.png'
-import Moins from '@/public/images/moins.png'
-import Header from '@/app/components/header'
-import RootLayout from '@/app/layout'
-
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import TrashIcon from '@/public/images/trash.png';
+import Tshirt from '@/public/images/t-shirt.png';
+import Plus from '@/public/images/plus.png';
+import Moins from '@/public/images/moins.png';
+import Link from 'next/link';
 
 function Cart() {
-  // État pour stocker les produits dans le panier
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: 'T-shirt',
-      price: 87,
-      quantity: 1,
-      totalPrice: 87
-    },
-    {
-      id: 2,
-      name: 'T-shirt',
-      price: 87,
-      quantity: 1,
-      totalPrice: 87
-    },
-    {
-      id: 3,
-      name: 'T-shirt',
-      price: 87,
-      quantity: 1,
-      totalPrice: 87
+  const [products, setProducts] = useState([]);
+
+  // Fonction pour récupérer les produits depuis l'API
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}`);
+      setProducts(response.data);
+      console.log(response.data)
+      
+    } catch (error) {
+      console.error('Erreur au dela recuperation des donnees:', error);
     }
-
-  ]);
-
+  };
+  
   // Fonction pour incrémenter la quantité d'un produit
-  const increment = (id) => {
-    setProducts(products.map(product =>
-      product.id === id
-        ? { ...product, quantity: product.quantity + 1, totalPrice: (product.quantity + 1) * product.price }
-        : product
-    ));
+  const increment = async (id) => {
+    const product = products.find(p => p.id === id);
+    try {
+      await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}${id}`, {
+        quantity: product.quantity + 1,
+        totalPrice: (product.quantity + 1) * product.price
+      });
+      fetchProducts(); // Récupère les produits mis à jour
+    } catch (error) {
+      console.error('Erreur lors de lintcrementation:', error);
+    }
   };
 
   // Fonction pour décrémenter la quantité d'un produit
-  const decrement = (id) => {
-    setProducts(products.map(product =>
-      product.id === id && product.quantity > 1
-        ? { ...product, quantity: product.quantity - 1, totalPrice: (product.quantity - 1) * product.price }
-        : product
-    ));
+  const decrement = async (id) => {
+    const product = products.find(p => p.id === id);
+    if (product.quantity > 1) {
+      try {
+        await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}${id}`, {
+          quantity: product.quantity - 1,
+          totalPrice: (product.quantity - 1) * product.price
+        });
+        fetchProducts(); // Récupère les produits mis à jour
+      } catch (error) {
+        console.error('Erreur lors de la decrementation:', error);
+      }
+    }
   };
 
   // Fonction pour supprimer un produit du panier
-  const removeProduct = (id) => {
-    setProducts(products.filter(product => product.id !== id));
+  const removeProduct = async (id) => {
+    try {
+      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}${id}`);
+      console.log('Deleting product with ID:', id); 
+      fetchProducts(); // Récupère les produits mis à jour
+    } catch (error) {
+      console.error('Erreur lors de la suppression des produits:', error);
+    }
   };
+
+  // Utiliser useEffect pour récupérer les produits lorsque le composant se monte
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <section className='mt-[50px] flex-col lg:flex-row flex gap-10 px-[5%]'>
@@ -82,10 +91,9 @@ function Cart() {
         {products.map(product => (
           <div key={product.id} className="flex justify-between pb-5 border-b border-gris2 items-center mt-5">
             <div className="flex gap-2 md:gap-3">
-              <Image src={Tshirt} width={50} height={50} className='rounded-lg' />
-              <div className='text-sm md:text-1xl'>
-                <h3 className='text-noir font-bold text-sm md:text-1xl'>{product.name}</h3>
-                <h3 className='text-gris3 font-bold text-sm md:text-1xl '>Green Large</h3>
+              <Image src={product.imageUrl} width={50} height={50} className='rounded-lg' />
+              <div className='text-sm w-[90px] md:text-1xl'>
+                <h3 className='text-noir font-bold text-sm md:text-1xl'>{product.title}</h3>
                 <h3 className='text-noir font-bold text-sm md:text-1xl'>${product.price}</h3>
               </div>
             </div>
@@ -100,7 +108,9 @@ function Cart() {
               <Image src={TrashIcon} width={30} height={30} className='cursor-pointer w-5 h-5' onClick={() => removeProduct(product.id)} />
             </div>
 
-            <h3 className='text-noir font-bold text-sm md:text-1xl'>${product.totalPrice.toFixed(2)}</h3>
+            <h3 className='text-noir font-bold text-sm md:text-1xl'>
+              ${(typeof product.totalPrice === 'number' ? product.totalPrice : 0).toFixed(2)}
+            </h3>
           </div>
         ))}
       </div>
@@ -110,7 +120,9 @@ function Cart() {
 
         <div className="flex justify-between items-center mt-5">
           <h3 className='text-gris3 text-1xl'>Subtotal</h3>
-          <h3 className='text-gris3 text-1xl'>${products.reduce((acc, product) => acc + product.totalPrice, 0).toFixed(2)}</h3>
+          <h3 className='text-gris3 text-1xl'>
+            ${(typeof products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) === 'number' ? products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) : 0).toFixed(2)}
+          </h3>
         </div>
 
         <div className="flex justify-between items-center pb-5 border-gris2 border-b">
@@ -120,7 +132,9 @@ function Cart() {
 
         <div className="flex justify-between font-bold items-center mt-5">
           <h3 className='text-noir text-1xl'>Order total</h3>
-          <h3 className='text-noir text-1xl'>${products.reduce((acc, product) => acc + product.totalPrice, 0).toFixed(2)}</h3>
+          <h3 className='text-noir text-1xl'>
+            ${(typeof products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) === 'number' ? products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) : 0).toFixed(2)}
+          </h3>
         </div>
 
         <Link href="./checkout" className='w-full'>

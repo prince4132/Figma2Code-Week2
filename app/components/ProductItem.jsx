@@ -4,7 +4,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Cart2 from "@/public/images/cart.png";
 
-const ProductItems = ({ imageUrl, title, price, link }) => {
+const ProductItems = ({ imageUrl, title, price, link, onAddToCart  }) => {
+
+  const handleBuyNow = () => {
+    onAddToCart({ title, price, imageUrl, quantity: 1, totalPrice: price });
+    // Optionnel: rediriger vers la page de paiement ou le panier après l'ajout
+    // window.location.href = '/checkout'; // Décommentez si vous voulez rediriger vers une page de paiement
+  };
+
   return (
     <div className='product-item relative flex w-full flex-col justify-between md:w-[48%] lg:w-[32%] h-[450px]' >
 
@@ -19,8 +26,8 @@ const ProductItems = ({ imageUrl, title, price, link }) => {
                 <Image src={Cart2} alt="Cart" />
             </div>
 
-              <Link href={link}>
-                <button className='bg-transparent text-blanc hover:text-noir border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
+              <Link href={link}  >
+                <button onClick={handleBuyNow} className='bg-transparent text-blanc hover:text-noir border-blanc border-2 transition-all p-3 md:p-5 rounded-full'>
                   BUY NOW
                 </button>
               </Link>

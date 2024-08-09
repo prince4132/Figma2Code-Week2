@@ -1,0 +1,12 @@
+{
+  "products": [
+    {
+      "id": "a45e",
+      "title": "Frontpack",
+      "price": "200.0",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenFrontpack.jpg?v=1675455064",
+      "quantity": 6,
+      "totalPrice": 1200
+    }
+  ]
+}

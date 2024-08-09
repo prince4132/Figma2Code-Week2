@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import TrashIcon from '@/public/images/trash.png'
 import Link from 'next/link'
 import Tshirt from '@/public/images/t-shirt.png'
@@ -11,33 +11,25 @@ import RootLayout from '@/app/layout'
 import CreditCard from '@/public/images/card.png'
 import Bank from '@/public/images/bank.png'
 import Lock from '@/public/images/lock.png'
+import axios from 'axios';
 
 function page() {
+  const [products, setProducts] = useState([]);
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}`);
+      setProducts(response.data);
+      console.log(response.data)
+      
+    } catch (error) {
+      console.error('Erreur au dela recuperation des donnees:', error);
+    }
+  };
+    // Utiliser useEffect pour récupérer les produits lorsque le composant se monte
+    useEffect(() => {
+      fetchProducts();
+    }, []);
 
-    const [products, setProducts] = useState([
-        {
-          id: 1,
-          name: 'T-shirt',
-          price: 87,
-          quantity: 1,
-          totalPrice: 87
-        },
-        {
-          id: 2,
-          name: 'T-shirt',
-          price: 87,
-          quantity: 1,
-          totalPrice: 87
-        },
-        {
-          id: 3,
-          name: 'T-shirt',
-          price: 87,
-          quantity: 1,
-          totalPrice: 87
-        }
-    
-      ]);
   return (
     <section className='className=mt-[50px] flex-col lg:flex-row mt-10 flex gap-16 px-[5%]'>
             
@@ -51,21 +43,21 @@ function page() {
                     </h3>
                 </div>
                 
-                  {products.map(product => (
-
-                    <div key={product.id} className="flex justify-between pb-5 border-b border-gris2 items-center mt-5">
-                        <div className="flex gap-2 md:gap-3">
-                            
-                          <Image src={Tshirt} width={50} height={50} className='rounded-lg' />
-                          <div className='text-sm md:text-1xl'>
-                              <p className='text-noir font-bold text-sm md:text-1xl'>{product.name}</p>
-                              <p className='text-gris3 font-bold text-sm md:text-1xl '>Green Large</p>
-                              <p className='text-noir font-bold text-sm md:text-1xl'>${product.price}</p>
-                          </div>
-                        </div>
-                        <h3 className='text-noir font-bold text-sm md:text-1xl'>${product.totalPrice.toFixed(2)}</h3>
+                {products.map(product => (
+                <div key={product.id} className="flex justify-between pb-5 border-b border-gris2 items-center mt-5">
+                  <div className="flex gap-2 md:gap-3">
+                    <Image src={product.imageUrl} width={50} height={50} className='rounded-lg' />
+                    <div className='text-sm w-[90px] md:text-1xl'>
+                      <h3 className='text-noir font-bold text-sm md:text-1xl'>{product.title}</h3>
+                      <h3 className='text-noir font-bold text-sm md:text-1xl'>${product.price}</h3>
                     </div>
-                  ))}
+                  </div>
+
+                  <h3 className='text-noir font-bold text-sm md:text-1xl'>
+                    ${(typeof product.totalPrice === 'number' ? product.totalPrice : 0).toFixed(2)}
+                  </h3>
+                </div>
+              ))}
 
                   <div className="mt-5">
                     <h3 className='text-gris3 font-bold text-sm md:text-1xl'>Discount</h3>
@@ -91,7 +83,7 @@ function page() {
                             
                         <div className="flex justify-between items-center mt-5">
                           <h3 className='text-gris3 text-1xl'>Subtotal</h3>
-                          <h3 className='text-gris3 text-1xl'>${products.reduce((acc, product) => acc + product.totalPrice, 0).toFixed(2)}</h3>
+                          <h3 className='text-gris3 text-1xl'>${(typeof products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) === 'number' ? products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) : 0).toFixed(2)}</h3>
                         </div>
 
                         <div className="flex justify-between items-center pb-5 border-gris2 border-b">
@@ -101,7 +93,7 @@ function page() {
 
                         <div className="flex justify-between font-bold items-center mt-5">
                           <h3 className='text-noir text-1xl'>Order total</h3>
-                          <h3 className='text-noir text-1xl'>${products.reduce((acc, product) => acc + product.totalPrice, 0).toFixed(2)}</h3>
+                          <h3 className='text-noir text-1xl'>${(typeof products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) === 'number' ? products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) : 0).toFixed(2)}</h3>
                         </div>
 
                     </div>
@@ -348,7 +340,7 @@ function page() {
                       <Link href="./payment" className='w-1/2'>
                         <button className='bg-noir flex justify-center items-center p-3 rounded-full w-full md:w-1/2 lg:w-2/3 md:mx-auto
                         hover:bg-blanc hover:text-noir hover:border-2 hover:border-noir text-blanc'>
-                            Pay ${products.reduce((acc, product) => acc + product.totalPrice, 0).toFixed(2)} →
+                            Pay ${(typeof products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) === 'number' ? products.reduce((acc, product) => acc + (typeof product.totalPrice === 'number' ? product.totalPrice : 0), 0) : 0).toFixed(2)} →
                         </button>
                       </Link>
                       </div>
