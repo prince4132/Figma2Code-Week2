@@ -48,7 +48,7 @@ function Header({ products }) {
         <h1 className='uppercase text-xl md:text-[36px] text-noir font-chillax-extralight font-semibold'>Ballamas</h1>
 
         <ul className="hidden lg:flex w-full h-full md:w-auto md:relative gap-5">
-          <li><a href="#">Shop</a></li>
+          <li><a href="./products">Shop</a></li>
           <li><a href="#">About Us</a></li>
           <li>
             <div className="flex gap-2">
@@ -67,7 +67,7 @@ function Header({ products }) {
           <li><a href="#">Women</a></li>
           <li><a href="#">Kids</a></li>
           <li><a href="#">Collections</a></li>
-          <li><a href="#">Shop</a></li>
+          <li><a href="./products">Shop</a></li>
           <li><a href="#">About Us</a></li>
           <li>
             <div className="flex gap-2">

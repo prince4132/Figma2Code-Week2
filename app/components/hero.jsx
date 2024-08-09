@@ -22,13 +22,17 @@ function hero() {
         </h3>
 
         <div className="flex gap-2">
-            <button className='text-noir hover:bg-noir hover:text-blanc transition-all bg-blanc p-3 md:p-5 rounded-full'>
-                Start Shopping
-            </button>
+            <a href="./pages/products">
+                <button className='text-noir hover:bg-noir hover:text-blanc transition-all bg-blanc p-3 md:p-5 rounded-full'>
+                    Start Shopping
+                </button>
+            </a>
 
-            <button className='bg-blanc hover:text-blanc transition-all p-3 md:p-5 rounded-full'>
-                <Image src={ArrowIcon} className='flex-shrink-0' width={20} height={20}/>
-            </button>
+            <a href="./pages/products">
+                <button className='bg-blanc hover:text-blanc transition-all p-3 md:p-5 rounded-full'>
+                    <Image src={ArrowIcon} className='flex-shrink-0' width={20} height={20}/>
+                </button>
+            </a>
         </div>
         
     </section>
